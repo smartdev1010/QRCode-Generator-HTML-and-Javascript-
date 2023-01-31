@@ -50,6 +50,7 @@ function generateSimpleQRCode() {
     });
 
     qrCode.append(document.getElementById("qrcode"));
+    document.getElementsByTagName('svg')[0].setAttribute('class', 'shadow');
   } else {
     alert("Please enter a valid URL");
   }
@@ -116,10 +117,7 @@ function generateCircleQRCode() {
     qrCode.append(tmpElement);
     tmpElement.style.position = "absolute";
     document.getElementById("qrcode").appendChild(tmpElement);
-    for (let i = 0; i < document.getElementsByTagName("rect").length; i++) {
-      document.getElementsByTagName("rect")[i].style.boxShadow =
-        "2px 2px 2px black";
-    }
+    document.getElementsByTagName('svg')[0].setAttribute('class', 'shadow');
     document.getElementsByTagName("img")[0].style.boxShadow =
       "2px 2px 2px black";
   } else {
@@ -130,12 +128,7 @@ function generateCircleQRCode() {
 function saveAsImage() {
   var container = document.getElementById("result-panel"); /* full page */
   html2canvas(container, {
-    useCORS: true,
-    allowTaint: true,
-    scale: 0.98,
-    dpi: 500,
-    width: 1400,
-    height: 900,
+    useCORS: true
   }).then(function (canvas) {
     var link = document.createElement("a");
     document.body.appendChild(link);
