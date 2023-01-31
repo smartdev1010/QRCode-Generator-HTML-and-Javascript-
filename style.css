@@ -56,10 +56,52 @@
 
 .qrcode {
     padding: 0px;
-    background-color: white;
+    background-color: transparent;
     position: relative;
 }
 
 .qrcode img {
     margin: 0 auto;
+}
+
+#editing-panel{
+    background:url('./image.jpg');
+    background-size: cover;
+    position: relative;
+}
+
+#result-panel{
+    background:url('./image.jpg');
+    background-size: cover;
+    position: relative;
+}
+
+.rect{
+    position: relative;
+    background-color: #5868bf;
+    left: 20px;
+    top: 20px;
+    width: 100px;
+    height: 100px;
+}
+
+.corner{
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    width: 8px;
+    height: 8px;
+    background-color: black;
+}
+
+.corner:hover{
+    cursor: pointer;
+}
+
+#qrcode-container{
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    width: 100px;
+    height: 100px;
 }

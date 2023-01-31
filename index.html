@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title></title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
     <div class="form">
@@ -18,32 +18,97 @@
           value="https://webisora.com"
           required
         />
-        <button type="button" onclick="generateQRCode()">
-          Generate QR Code
+        <button type="button" onclick="generateSimpleQRCode()">
+          Generate Simple QR Code
         </button>
-        <div style="display: flex; align-items: center; justify-content: center; margin-top: 10px;">
-            <span>padding : </span>
-            <input type="number" style="flex: 1;"  value="0" onchange="paddingChange(event)"/>
+        <button type="button" onclick="generateCircleQRCode()">
+          Generate QR Code In Circle
+        </button>
+        <button type="button" onclick="saveAsImage()">Save as a image</button>
+        <!-- <div
+          style="
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 10px;
+          "
+        >
+          <span>padding : </span>
+          <input
+            type="number"
+            style="flex: 1"
+            value="0"
+            onchange="paddingChange(event)"
+          />
         </div>
-        <div style="display: flex; align-items: center; justify-content: center; margin-top: 10px;">
-            <span>padding color : </span>
-            <input type="color" style="flex: 1;" value="#ffffff" onchange="paddingColorChange(event)"/>
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 10px;
+          "
+        >
+          <span>padding color : </span>
+          <input
+            type="color"
+            style="flex: 1"
+            value="#ffffff"
+            onchange="paddingColorChange(event)"
+          />
         </div>
-        <div style="display: flex; align-items: center; justify-content: center; margin-top: 10px;">
-            <span>foreground color : </span>
-            <input type="color" style="flex: 1;" value="#ffffff" onchange="foregroundColorChange(event)"/>
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 10px;
+          "
+        >
+          <span>foreground color : </span>
+          <input
+            type="color"
+            style="flex: 1"
+            value="#ffffff"
+            onchange="foregroundColorChange(event)"
+          />
         </div>
-        <div style="display: flex; align-items: center; justify-content: center; margin-top: 10px;">
-            <span>background color : </span>
-            <input type="color" style="flex: 1;" value="#ffffff" onchange="backgroundColorChange(event)"/>
-        </div>
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 10px;
+          "
+        >
+          <span>background color : </span>
+          <input
+            type="color"
+            style="flex: 1"
+            value="#ffffff"
+            onchange="backgroundColorChange(event)"
+          />
+        </div> -->
       </form>
-
-      <div id="qrcode-container">
-        <div id="qrcode" class="qrcode"></div>
+      <div style="display: flex; height: 400px;">
+        <div id="editing-panel" style="flex: 1">
+          <div class="rect">
+            <div class="corner"></div>
+          </div>
+        </div>
+        <div style="flex: 0.2;" ></div>
+        <div id="result-panel" style="flex: 1">
+          <div id="qrcode-container">
+            <div id="qrcode" class="qrcode"></div>
+          </div>
+        </div>
       </div>
     </div>
   </body>
-  <script type="text/javascript" src="https://unpkg.com/qr-code-styling@1.5.0/lib/qr-code-styling.js"></script>
+  <script
+    type="text/javascript"
+    src="https://unpkg.com/qr-code-styling@1.5.0/lib/qr-code-styling.js"
+  ></script>
+  <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
   <script src="./script.js"></script>
 </html>
