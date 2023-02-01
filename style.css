@@ -95,7 +95,7 @@
 }
 
 .corner:hover{
-    cursor: pointer;
+    cursor: se-resize;
 }
 
 #qrcode-container{

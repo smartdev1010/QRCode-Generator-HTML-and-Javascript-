@@ -127,13 +127,14 @@ function generateCircleQRCode() {
 
 function saveAsImage() {
   var container = document.getElementById("result-panel"); /* full page */
-  html2canvas(container, {
+  html2canvas(container,  {
+    allowTaint: true,
     useCORS: true
   }).then(function (canvas) {
     var link = document.createElement("a");
     document.body.appendChild(link);
     link.download = "html_image.jpg";
-    link.href = canvas.toDataURL();
+    link.href = canvas.toDataURL('image/jpeg', 1.0);
     link.target = "_blank";
     link.click();
   });

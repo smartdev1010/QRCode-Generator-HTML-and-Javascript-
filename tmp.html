@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script
+      type="text/javascript"
+      src="//code.jquery.com/jquery-2.1.1.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="//code.jquery.com/ui/1.11.2/jquery-ui.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="http://html2canvas.hertzen.com/build/html2canvas.js"
+    ></script>
+    <script type="text/javascript" src="jquery.plugin.html2canvas.js"></script>
+
+    <script type="text/javascript">
+      $(function () {
+        $("#show_button").click(function () {
+          html2canvas(document.body, {
+            onrendered: function (canvas) {
+              $("<img/>", {
+                id: "image",
+                src: canvas.toDataURL("image/png"),
+                width: "95%",
+                height: "95%",
+              }).appendTo($("#show_img").empty());
+            },
+          });
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <h1>test</h1>
+    <button id="show_button">Show Image</button>
+
+    //this is a problem
+    <a href="" download="dl.jpg">download</a>
+    <div id="show_img"></div>
+  </body>
+</html>
